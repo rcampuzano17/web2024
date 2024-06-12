@@ -1,0 +1,106 @@
+.contenedor{
+    align-items:center;
+    border:solid 0.1em;
+    display:flex;
+    height:500px;
+    justify-content:space-around;
+}
+.contenedor div{
+    border:solid 0.1em;
+    filter: invert(1);
+    height:400px;
+    width:20%;
+    transition:all linear 0.5s;
+}
+
+.contenedor div:hover{
+    background-size:100% 100%;
+    filter: invert(0);
+}
+.cupon{
+    display:none;
+    font-size:48px;
+    font-weight:bolder;
+    font-style:italic;
+    text-align:center;
+}
+.hija1{
+    background:url(foto1.jpg);
+    background-size:cover;
+}
+
+.hija2{
+    background:url(foto2.jpg);
+    background-size:cover;
+}
+.hija3{
+    background:url(foto3.jpg);
+    background-size:cover;
+}
+.hija4{
+    background:url(foto4.jpg);
+    background-size:cover;
+}
+
+.imprimir{
+    background:orange url(printer.png) no-repeat 20px 5px;
+    background-size:40px 40px;
+    border-radius:1em;
+    box-shadow:0.1em 0.2em 0.3em rgba(0, 0, 0, 0.5);
+    display:block;
+    font-style:italic;
+    font-size:24px;
+    margin:1em auto;
+    padding:0.4em;
+    width:40%;
+}
+.imprimir:hover{
+    cursor:pointer;
+}
+@media print{
+    .hija1, .hija3{
+        display:none;
+    }
+    .contenedor{
+        background-color:orange;
+        flex-direction: column;
+    }
+    .imprimir{
+        display: none;
+    }
+    
+    .contenedor div{
+         filter:none;
+         width:50%;
+    }
+    .cupon{
+        display:block;
+    }
+    
+}
+
+@media screen and (orientation:landscape){
+     body{
+        background:rgb(239, 217, 15);
+     }
+}
+
+@media screen and(orientation:portrait){
+    body{
+        background:lightblue;
+    }
+}
+
+@media screen and (max-width:700px){
+    .contenedor{
+        flex-direction:column;
+        height:auto;
+    }
+    .contenedor div{
+        border:solid 0.1em;
+        filter: invert(1);
+        height:400px;
+        width:20%;
+        transition:all linear 0.5s;
+    }
+}
